@@ -63,6 +63,19 @@ Or, you can straightly download the processed dataset with link: `https://drive.
 
 ---
 
+## Pretrained Weights
+
+Pre-trained checkpoints for the PointCNN++ backbone (ResUNetBN2C) are available:
+
+| Dataset | URL |
+|---------|-----|
+| **KITTI** | [Google Drive](https://drive.google.com/file/d/12ahfWCwJyaCJwcgqlKDgK-sqPCaTJtif/view?usp=drive_link) |
+| **3DMatch** | [Google Drive](https://drive.google.com/file/d/1Wkyb9QSyKsTYPErUOex6lbMwkXootIFk/view?usp=sharing) |
+
+Download the checkpoint and place it (e.g. as `best_val_checkpoint.pth`) in your model directory. Use it when running the demo or benchmark script with `--resume` or `--checkpoint` (see the script for the exact argument).
+
+---
+
 ## Training
 
 ### 3DMatch (PointCNN++ backbone)
@@ -80,27 +93,17 @@ Example with custom root and voxel size:
 export THREEDMATCH_ROOT=/path/to/3dmatch_processed/indoor
 export CONFIG_PATH=./configs/indoor
 export VOXEL_SIZE=0.025
-./scripts/train_3dmatch.sh
+bash ./scripts/train_3dmatch.sh
 ```
 
 ### KITTI (PointCNN++ backbone)
 
 ```bash
 export KITTI_PATH=/path/to/kitti_odometry_dataset
-./scripts/train_kitti.sh
+bash ./scripts/train_kitti.sh
 ```
 
 Defaults: dataset `KITTINMPairDataset`, model `ResUNetBN2C`, voxel size `0.3`, feature dimension 16. Logs and checkpoints go to `./outputs/Experiments/...`.
-
----
-
-## Testing
-
-We also provide a general test script:
-
-```bash
-python test_kitti.py --save_dir "/path/to/parent/dir/of/ckpt"
-```
 
 ---
 

@@ -1,5 +1,6 @@
 import logging
 import random
+import sys
 import torch
 import torch.utils.data
 import numpy as np
@@ -10,6 +11,10 @@ import pathlib
 import pickle
 import copy
 
+_pointelligence_root = pathlib.Path(__file__).resolve().parent.parent.parent.parent
+if str(_pointelligence_root) not in sys.path:
+    sys.path.insert(0, str(_pointelligence_root))
+
 from util.pointcloud import get_matching_indices, make_open3d_point_cloud
 from util.trajectory import read_trajectory
 import lib.transforms as t
@@ -17,10 +22,10 @@ import lib.transforms as t
 import open3d as o3d
 
 try:
-    from pointcnnpp.internals.grid_sample import grid_sample_filter
+    from internals.grid_sample import grid_sample_filter
 except ImportError:
     grid_sample_filter = None
-    logging.warning("pointcnnpp.internals.grid_sample not available, voxel_downsample_using_pointcloud_downsampler will fail")
+    logging.warning("internals.grid_sample not available, voxel_downsample_using_pointcloud_downsampler will fail")
 
 kitti_cache = {}
 kitti_icp_cache = {}
@@ -136,7 +141,7 @@ def sample_random_trans(pcd, randg, rotation_range=360):
 
 def voxel_downsample_using_pointcloud_downsampler(xyz, voxel_size):
     if grid_sample_filter is None:
-        raise ImportError("pointcnnpp.internals.grid_sample not available")
+        raise ImportError("internals.grid_sample not available")
     
     if voxel_size is None:
         if isinstance(xyz, torch.Tensor):

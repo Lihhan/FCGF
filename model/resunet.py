@@ -3,8 +3,9 @@ import torch
 import torch.nn as nn
 from functools import partial
 
-# import sys
-# sys.path.append("/path/to/project/root/dir")
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent.parent))
 
 from model.common import get_norm
 from model.residual_block import get_block
