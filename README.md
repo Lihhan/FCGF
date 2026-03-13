@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 ## Notes
 
-- **Data paths**: 3DMatch root is set via `THREEDMATCH_ROOT` (default in the script: `/data3/lihan/PointOps/data/3dmatch_processed/indoor`). KITTI root is set via `KITTI_PATH`. Override them for your environment.
+- **Data paths**: 3DMatch root is set via `THREEDMATCH_ROOT` (default in the script: `path/to/3dmatch_processed/indoor`). KITTI root is set via `KITTI_PATH`. Override them for your environment.
 - **Output directory**: Training outputs (checkpoints, logs) go under `DATA_ROOT` (default `./outputs/Experiments`) with a dataset/trainer/model/time subfolder.
 - **Voxel size**: 3DMatch default is `0.025` (2.5 cm); KITTI default is `0.3` (30 cm). Set `VOXEL_SIZE` in the script or environment if needed.
 - **Model**: Default backbone is `ResUNetBN2C` (PointCNN++-based ResUNet). Other variants (e.g. `ResUNetBN2B`, `ResUNetBN2D`) are in `model/resunet.py`.
