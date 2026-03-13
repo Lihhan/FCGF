@@ -23,12 +23,6 @@ pip install -r requirements.txt
 
 `requirements.txt` includes `numpy`, `scipy`, `matplotlib`, `open3d`, `tensorboardX`, `easydict`, `joblib`, `scikit-learn`, etc. Install PyTorch separately (e.g. via conda or [pytorch.org](https://pytorch.org)).
 
-### 3. PointCNN++ installation
-
-PointCNN++ is **required** as the backbone. The original FCGF used MinkowskiEngine; this variant uses PointCNN++ layers (`PointConv3d`, triplets, etc.).
-
-Verify with `import pointcnnpp` in Python.
-
 ---
 
 ## Notes
