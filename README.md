@@ -64,7 +64,7 @@ Pre-trained checkpoints for the PointCNN++ backbone (ResUNetBN2C) are available:
 | Dataset | URL |
 |---------|-----|
 | **KITTI** | [Google Drive](https://drive.google.com/file/d/12ahfWCwJyaCJwcgqlKDgK-sqPCaTJtif/view?usp=drive_link) |
-| **3DMatch** | [Google Drive]([https://drive.google.com/file/d/1Wkyb9QSyKsTYPErUOex6lbMwkXootIFk/view?usp=sharing](https://drive.google.com/file/d/1eeksb0BLLuTXg0wQEOrHcYmSsUXS25BR/view?usp=sharing)) |
+| **3DMatch** | [Google Drive](https://drive.google.com/file/d/1eeksb0BLLuTXg0wQEOrHcYmSsUXS25BR/view?usp=sharing) |
 
 Download the checkpoint and place it (e.g. as `best_val_checkpoint.pth`) in your model directory. Use it when running the demo or benchmark script with `--resume` or `--checkpoint` (see the script for the exact argument).
 
